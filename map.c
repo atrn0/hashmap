@@ -4,9 +4,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define INIT_CAPACITY 17
-#define TOMBSTONE ((char*)-1)
-#define CAP_THRESHOLD 80  // %
+#define INIT_CAPACITY 17       // 初めのキャパシティ
+#define TOMBSTONE ((char*)-1)  // map_removeしたkey
+#define CAP_THRESHOLD 80  // %を超えたらmapのキャパシティを2倍にする
 
 typedef struct {
   char* key;
