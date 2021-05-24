@@ -22,9 +22,14 @@ typedef struct {
 void map_put(HashMap* map, char* key, int value);
 void print_map(HashMap* map);
 
+// generate FNV-1a hash
+// https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function#FNV-1a_hash
 uint64_t hash(char* str) {
-  uint64_t i = 1;
-  for (int j = 0; str[j]; j++) i *= str[j];
+  uint64_t i = 14695981039346656037U;
+  for (int j = 0; str[j]; j++) {
+    i ^= str[j];
+    i *= 1099511628211U;
+  }
   return i;
 }
 
