@@ -5,7 +5,7 @@
 #include <string.h>
 
 #define INIT_CAPACITY 17
-#define TOMBSTONE ((void*)-1)
+#define TOMBSTONE ((char*)-1)
 #define CAP_THRESHOLD 80  // %
 
 typedef struct {
